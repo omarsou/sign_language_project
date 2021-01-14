@@ -1,0 +1,13 @@
+2020-12-18 23:24:46,765 [DEV] partition [Recognition & Translation] results:
+	Best CTC Decode Beam Size: 10
+	Best Translation Beam Size: 10 and Alpha: 1
+	WER 41.53	(DEL: 34.24,	INS: 1.17,	SUB: 6.11)
+	BLEU-4 21.08	(BLEU-1: 45.99,	BLEU-2: 33.34,	BLEU-3: 25.87,	BLEU-4: 21.08)
+	CHRF 44.28	ROUGE 46.91
+2020-12-18 23:24:46,765 ************************************************************
+2020-12-18 23:28:38,324 [TEST] partition [Recognition & Translation] results:
+	Best CTC Decode Beam Size: 10
+	Best Translation Beam Size: 10 and Alpha: 1
+	WER 41.11	(DEL: 32.57,	INS: 1.39,	SUB: 7.16)
+	BLEU-4 20.41	(BLEU-1: 45.30,	BLEU-2: 32.58,	BLEU-3: 25.06,	BLEU-4: 20.41)
+	CHRF 43.86	ROUGE 45.46

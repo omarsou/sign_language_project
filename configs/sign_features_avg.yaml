@@ -1,0 +1,82 @@
+data:
+  data_path: ./data/
+  dev: phoenix14t.pami0.devcnn
+  feature_size: 1024
+  feature_size_cnn: 1024
+  gls: gloss
+  level: word
+  max_sent_length: 400
+  random_dev_subset: -1
+  random_train_subset: -1
+  sgn: sign
+  test: phoenix14t.pami0.testcnn
+  train: [phoenix14t.pami0.traincnn0, phoenix14t.pami0.traincnn1, phoenix14t.pami0.traincnn2,
+    phoenix14t.pami0.traincnn3, phoenix14t.pami0.traincnn4, phoenix14t.pami0.traincnn5]
+  txt: text
+  txt_lowercase: true
+  version: phoenix_2014_trans
+model:
+  bias_initializer: zeros
+  decoder:
+    dropout: 0.1
+    embeddings: {activation_type: softsign, dropout: 0.1, embedding_dim: 1024, norm_type: batch,
+      scale: false}
+    ff_size: 2048
+    hidden_size: 1024
+    num_heads: 8
+    num_layers: 3
+    type: transformer
+  embed_init_gain: 1.0
+  embed_initializer: xavier
+  encoder:
+    dropout: 0.1
+    embeddings: {activation_type: softsign, dropout: 0.1, embedding_dim: 512, norm_type: batch,
+      scale: false}
+    ff_size: 2048
+    hidden_size: 1024
+    num_heads: 8
+    num_layers: 3
+    type: transformer
+  init_gain: 1.0
+  initializer: xavier
+  tied_softmax: false
+name: sign_experiment
+testing:
+  recognition_beam_sizes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  translation_beam_alphas: [-1, 0, 1, 2, 3, 4, 5]
+  translation_beam_sizes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+training:
+  batch_multiplier: 1
+  batch_size: 32
+  batch_type: sentence
+  betas: [0.9, 0.998]
+  decrease_factor: 0.7
+  early_stopping_metric: eval_metric
+  epochs: 5000000
+  eval_metric: bleu
+  eval_recognition_beam_size: 1
+  eval_translation_beam_alpha: -1
+  eval_translation_beam_size: 1
+  keep_last_ckpts: 1
+  label_smoothing: 0.0
+  learning_rate: 0.001
+  learning_rate_min: 1.0e-07
+  logging_freq: 100
+  model_dir: ./sign_sample_model
+  num_valid_log: 5
+  optimizer: adam
+  overwrite: true
+  patience: 8
+  random_seed: 42
+  recognition_loss_weight: 1.0
+  reset_best_ckpt: false
+  reset_optimizer: false
+  reset_scheduler: false
+  scheduling: plateau
+  shuffle: true
+  translation_loss_weight: 1.0
+  translation_max_output_length: 30
+  translation_normalization: batch
+  use_cuda: true
+  validation_freq: 100
+  weight_decay: 0.001
