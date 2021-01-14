@@ -20,6 +20,9 @@ The codes are mainly based on the [Sign Language Transformers Repo](https://gith
 - [ ] A detailed and better written report
 - [ ] A detailed description of the repository
 
+## Updates
+- Added a short description of each repo's folder.
+
 **Note** : Experiments were made on COLAB (gpu : TESLA V100)
 
 ## First Step - Reproducing the result
